@@ -14,7 +14,11 @@ io.on("connection", socket => {
   socket.on("button clicked", data => {
     console.log(data);
     // sends click to all connected sockets under channel 'message'
-    socket.emit("message", data);
+    // socket.emit("message", data);
+  });
+
+  socket.on("message", data => {
+    console.log(data);
   });
 
   socket.on("disconnect", () => {
